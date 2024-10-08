@@ -6,14 +6,23 @@ public class Password {
         String password;
 
         do {
-            System.out.print("Ingrese Password que tenga minimo 1 Letra , 1 caracter Especial, 1 Numero, no debe ser de menos de 10 digitos: ");
+            System.out.print("Ingrese Password que tenga minimo 1 Letra Mayuscula, 1 caracter Especial, 1 Numero, no debe ser de menos de 10 digitos: ");
             password = scanner.nextLine();
 
             if (!isSecurePassword(password)) {
-                System.out.println("La contraseña no cumple con los parámetros mínimos requeridos. Intente nuevamente.");
+                System.out.println("La contraseña no cumple con los parámetros mínimos requeridos.");
+                System.out.println("Intente nuevamente.");
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println("Por favor ingrese una contrseña con los parametros requeridos");
+                System.out.println("Como Minimo 1 Letra Mayuscula, 1 caracter Especial, 1 Numero, no debe ser de menos de 10 digitos.");
             }
+            
+          //le agregafmos un while que nos funcione commo bucle y que no permita que se contnue hasta que los parametros rewuridos no esten completos con lo indicado
         } while (!isSecurePassword(password));
 
+        System.out.println("");
         System.out.println("La contraseña es segura.");
         scanner.close();
     }
