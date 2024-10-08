@@ -9,7 +9,7 @@ public class Mediana {
         System.out.print("Ingrese el número de elementos del arreglo: ");
         int n = scanner.nextInt();
 
-        // Declarar y llenar el arreglo con números reales
+        // Declarar y llenar el arreglo con números reales.
         double[] x = new double[n];
         System.out.println("Su arreglo se compone de : " + n + " elementos");
         System.out.println("Por favor ingrese la cantidad presionando ENTER despues de cada valor");
