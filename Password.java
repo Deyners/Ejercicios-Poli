@@ -3,15 +3,18 @@ import java.util.Scanner;
 public class Password {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese Password: ");
-        String Password = scanner.nextLine();
+        String password;
 
-        if (isSecurePassword(Password)) {
-            System.out.println("La contraseña es segura.");
-        } else {
-            System.out.println("La contraseña no cumple con los parámetros mínimos requeridos.");
-        }
+        do {
+            System.out.print("Ingrese Password que tenga minimo 1 Letra , 1 caracter Especial, 1 Numero, no debe ser de menos de 10 digitos: ");
+            password = scanner.nextLine();
 
+            if (!isSecurePassword(password)) {
+                System.out.println("La contraseña no cumple con los parámetros mínimos requeridos. Intente nuevamente.");
+            }
+        } while (!isSecurePassword(password));
+
+        System.out.println("La contraseña es segura.");
         scanner.close();
     }
 
@@ -20,26 +23,26 @@ public class Password {
             return false;
         }
 
-        boolean hasLetter = false;
+        boolean hasLetterUppercase = false;
         boolean hasDigit = false;
         boolean hasSpecialChar = false;
 
         for (char ch : password.toCharArray()) {
-            if (Character.isLetter(ch)) {
-                hasLetter = true;
+            if (Character.isUpperCase(ch)) {
+                hasLetterUppercase = true;
             } else if (Character.isDigit(ch)) {
                 hasDigit = true;
             } else {
                 hasSpecialChar = true;
             }
 
-            // Si todos los requisitos ya se cumplen, retornamos true para eficiencia.
-            if (hasLetter && hasDigit && hasSpecialChar) {
+            // Si todos los requisitos ya se cumplen full, deberia regresar true para eficienciaz<.
+            if (hasLetterUppercase && hasDigit && hasSpecialChar) {
                 return true;
             }
         }
 
-        // Retorna si todos los criterios se cumplieron después de revisar todos los caracteres.
-        return hasLetter && hasDigit && hasSpecialChar;
+        // Retorna si todos los criterios se cumplieron después de revisar todos los caracteres con los requisitos de la primera pantallaas.
+        return hasLetterUppercase && hasDigit && hasSpecialChar;
     }
 }
