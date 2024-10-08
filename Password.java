@@ -33,13 +33,13 @@ public class Password {
                 hasSpecialChar = true;
             }
 
-            // Si todos los requisitos ya se cumplen, retornamos true para eficiencia.
+            // Si todos los requisitos ya se cumplen full, retornamos true para eficiencia.
             if (hasLetter && hasDigit && hasSpecialChar) {
                 return true;
             }
         }
 
-        // Retorna si todos los criterios se cumplieron después de revisar todos los caracteres.
+        // Retorna si todos los criterios se cumplieron después de revisar todos los caracteres de acuerdo al mensaje que le salioo al iniciio.
         return hasLetter && hasDigit && hasSpecialChar;
     }
 }
